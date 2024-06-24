@@ -1,0 +1,49 @@
+﻿<Window x:Class="ElementMoving.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElementMoving"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <local:MouseEventArgsToMouseArgsConverter x:Key="MouseEventArgsToMouseArgsConverter"/>
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="PreviewMouseMove">
+            <i:InvokeCommandAction Command="{Binding CardMove}" 
+                                           EventArgsConverter="{StaticResource MouseEventArgsToMouseArgsConverter}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <i:Interaction.Behaviors>
+        <local:SizeObserverBehavior ActualWidth="{Binding WindowSize.Width, Mode=OneWayToSource}" 
+                                   ActualHeight="{Binding WindowSize.Height, Mode=OneWayToSource}"/>
+    </i:Interaction.Behaviors>
+    <Grid>
+        <materialDesign:Card Width="200" Height="50" Panel.ZIndex="1">
+            <i:Interaction.Behaviors>
+                <local:SizeObserverBehavior ActualWidth="{Binding CardSize.Width, Mode=OneWayToSource}" 
+                                   ActualHeight="{Binding CardSize.Height, Mode=OneWayToSource}"/>
+            </i:Interaction.Behaviors>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <i:InvokeCommandAction Command="{Binding CardPressed}" 
+                                           EventArgsConverter="{StaticResource MouseEventArgsToMouseArgsConverter}"/>
+                </i:EventTrigger>
+
+            </i:Interaction.Triggers>
+            <materialDesign:Card.RenderTransform>
+                <TranslateTransform X="{Binding CardTransformPosition.X}" Y="{Binding CardTransformPosition.Y}"/>
+            </materialDesign:Card.RenderTransform>
+        </materialDesign:Card>
+        <StackPanel>
+            <Button x:Name="Mybutton" Content="Click Me" />
+            <TextBlock x:Name="Description"/>
+        </StackPanel>
+
+        <Button Content="Click Me" Margin="0,200,0,0" Width="400" Height="50"/>
+
+    </Grid>
+</Window>

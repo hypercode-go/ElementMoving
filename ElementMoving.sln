@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElementMoving", "ElementMoving\ElementMoving.csproj", "{EB0BD8CE-62F8-4529-A285-5DF87D85330B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB0BD8CE-62F8-4529-A285-5DF87D85330B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0BD8CE-62F8-4529-A285-5DF87D85330B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0BD8CE-62F8-4529-A285-5DF87D85330B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0BD8CE-62F8-4529-A285-5DF87D85330B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DE0320C-DECA-42E6-8E71-1FF9CDC4E3F0}
+	EndGlobalSection
+EndGlobal
